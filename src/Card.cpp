@@ -1,21 +1,41 @@
 #include "../include/Card.hpp"
 
-std::ostream& operator<<(std::ostream& out, const Card& card) {
-    out << card.m_value << " of " << card.m_suit;
-    return out;
-} 
+Card::Card(const Rank& rank, const Suit& suit) 
+: m_rank{rank}, m_suit{suit} {};
 
-Card::Card(const std::string& suit, const std::string& value, bool print) 
-: m_suit{suit}, m_value{value} {
-    if (print) {
-        std::cout << *this << std::endl;
+std::string Card::suit_to_string() const {
+    switch(this->m_suit) {
+        case Suit::Hearts:
+            return "Hearts";
+        case Suit::Diamonds:
+            return "Diamonds";
+        case Suit::Clubs:
+            return "Clubs";
+        default:
+            return "Spades";
     }
 }
 
-std::string Card::get_suit() const {
-    return this->m_suit;
+std::string Card::rank_to_string() const {
+    switch(this->m_rank) {
+        case Rank::Ace:
+            return "Ace";
+        case Rank::Jack:
+            return "Jack";
+        case Rank::Queen:
+            return "Queen";
+        case Rank::King:
+            return "King";
+        default:
+            return std::to_string(static_cast<int>(this->m_rank));
+    }
 }
 
-std::string Card::get_value() const {
-    return this->m_value;
+bool operator==(const Card& card_1, const Card& card_2) {
+    return ((card_1.m_rank == card_2.m_rank) && (card_1.m_suit == card_2.m_suit));
+}
+
+std::ostream& operator<<(std::ostream& out, const Card& card) {
+    out << card.rank_to_string() << " of " << card.suit_to_string() << ".\n";
+    return out;
 }

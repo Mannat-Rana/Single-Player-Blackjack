@@ -1,10 +1,8 @@
-#include "../include/Card.hpp"
-#include "../include/Deck.hpp"
+#include "../include/Blackjack.hpp"
 
 int main() {
-    Deck test_deck {};
-    test_deck.shuffle();
-    std::cout << test_deck << std::endl;
-    std::cout << test_deck.get_top_card() << std::endl;
-    std::cout << test_deck << std::endl;
+    Blackjack test {};
+    for (i = 0; i < 100; i++) {
+        test.deal_card(test.get_player());
+    }
 }

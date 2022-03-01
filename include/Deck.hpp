@@ -9,7 +9,7 @@ class Deck {
 friend std::ostream& operator<<(std::ostream& out, const Deck& deck);
 
 private:
-    std::vector<Card> m_deck;
+    std::vector<Card> m_cards;
     bool m_shuffled;
 
 public:
