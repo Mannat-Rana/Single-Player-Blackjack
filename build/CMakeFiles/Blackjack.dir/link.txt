@@ -1,2 +1,0 @@
-/usr/bin/ar qc libBlackjack.a  CMakeFiles/Blackjack.dir/src/Blackjack.cpp.o
-/usr/bin/ranlib libBlackjack.a
