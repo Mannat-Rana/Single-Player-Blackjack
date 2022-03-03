@@ -1,0 +1,2 @@
+/usr/bin/ar qc libDeck.a  CMakeFiles/Deck.dir/src/Deck.cpp.o
+/usr/bin/ranlib libDeck.a

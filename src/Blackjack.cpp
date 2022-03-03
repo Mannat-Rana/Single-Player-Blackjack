@@ -33,6 +33,10 @@ void Blackjack::deal_card(Player& player) {
 }
 
 void Blackjack::start_round() {
+    if (this->m_deck.get_cards().size() <= 10) {
+        std::cout << "We're low on cards, let's reshuffle!\n";
+        this->reset_deck();
+    }
     this->m_player.clear_hand();
     this->m_dealer.clear_hand();
     this->m_player.set_hand_value(0);
@@ -121,6 +125,7 @@ void Blackjack::play_player_round() {
         
     }
     this->m_player.set_hand_value(player_hand_val);
+    
 }
 
 void Blackjack::play_dealer_round() {
@@ -176,6 +181,9 @@ void Blackjack::evaluate_round_winner() {
         std::cout << "Your hand has a higher value, you win!\n";
         this->m_player.add_win();
     }
+    else if (this->m_player.get_hand_value() == this->m_dealer.get_hand_value()) {
+        std::cout << "Same hand value, looks like it's a tie!\n";
+    }
     else {
         std::cout << "Dealer's hand has higher value, so dealer wins!\n";
         this->m_dealer.add_win();
@@ -184,6 +192,9 @@ void Blackjack::evaluate_round_winner() {
     std::cout << "Your total wins: " << this->m_player.get_rounds_won() << std::endl;
 }
 
+void Blackjack::wait(int seconds) const {
+    std::this_thread::sleep_for(std::chrono::seconds(seconds));
+}
 
 void Blackjack::start_game() {
     char play_again {'1'};

@@ -3,6 +3,8 @@
 #include "Card.hpp"
 #include "Deck.hpp"
 #include "Player.hpp"
+#include <chrono>
+#include <thread>
 
 class Blackjack {
 
@@ -24,10 +26,6 @@ public:
     void play_player_round();
     void play_dealer_round();
     void evaluate_round_winner();
-
-    
-    
-    
-    
+    void wait(int seconds) const;
     void start_game();
 };

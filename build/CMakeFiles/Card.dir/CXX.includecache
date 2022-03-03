@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/sikhdragon/Documents/C++/Single-Player-Blackjack/include/Card.hpp
+string
+-
+iostream
+-
+
+/home/sikhdragon/Documents/C++/Single-Player-Blackjack/src/Card.cpp
+../include/Card.hpp
+/home/sikhdragon/Documents/C++/Single-Player-Blackjack/include/Card.hpp
+
