@@ -32,6 +32,7 @@ struct Card {
     Suit m_suit;
 
     Card(const Rank& rank, const Suit& suit);
+    Rank get_rank() const;
     std::string suit_to_string() const;
     std::string rank_to_string() const;
     friend bool operator==(const Card& card_1, const Card& card_2);

@@ -3,6 +3,10 @@
 Card::Card(const Rank& rank, const Suit& suit) 
 : m_rank{rank}, m_suit{suit} {};
 
+Card::Rank Card::get_rank() const {
+    return m_rank;
+}
+
 std::string Card::suit_to_string() const {
     switch(this->m_suit) {
         case Suit::Hearts:

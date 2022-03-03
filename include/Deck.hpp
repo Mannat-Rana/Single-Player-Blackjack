@@ -14,7 +14,7 @@ private:
 
 public:
     Deck();
-    std::vector<Card> get_deck() const;
+    std::vector<Card> get_cards() const;
     bool is_shuffled() const;
     Card get_top_card();
     void shuffle();

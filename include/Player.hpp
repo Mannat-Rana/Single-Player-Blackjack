@@ -9,7 +9,7 @@ class Player {
 
 private:
     unsigned char m_hand_value;
-    unsigned char m_rounds_won;
+    unsigned int m_rounds_won;
     std::string m_player_name;
     std::vector<Card> m_hand;
 
@@ -18,5 +18,10 @@ public:
     std::vector<Card> get_hand() const;
     void add_card(const Card& card_to_add);
     void add_win();
-    Player(const std::string& input_player_name);
+    void set_name(const std::string& input_name);
+    void set_hand_value(unsigned int);
+    unsigned char get_hand_value() const;
+    unsigned int get_rounds_won() const;
+    void clear_hand();
+    Player();
 };

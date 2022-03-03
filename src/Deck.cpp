@@ -42,6 +42,10 @@ Deck::Deck()
     }
 }
 
+std::vector<Card> Deck::get_cards() const {
+    return this->m_cards;
+}
+
 bool Deck::is_shuffled() const {
     return this->m_shuffled;
 }
